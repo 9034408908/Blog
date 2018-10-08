@@ -22,7 +22,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 export const appRoutes: Routes = [
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent
   },
   { 

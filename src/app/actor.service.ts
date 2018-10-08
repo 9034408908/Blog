@@ -14,4 +14,7 @@ export class ActorService {
     get():Observable<any>{
      return this.http.get('https://employees-38b0a.firebaseio.com/employ.json')
    }
+   update(id,empData){
+return this.http.put('https://employees-38b0a.firebaseio.com/employ/'+id+'.json',empData)
+}
 }

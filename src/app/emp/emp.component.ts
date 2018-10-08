@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmpComponent implements OnInit {
  public id: any;
+ public btn_stt:boolean=true;
  public emp: any={};
  public emps:Array<any>;
 
@@ -20,6 +21,7 @@ this.id=this.activeRoute.snapshot.params.id;
 }
 
   ngOnInit() {
+  this.btn_stt=false;
  this.service.get().subscribe((add)=>{
   var keys=Object.keys(add);
   this.emps=keys.map((id)=>{
@@ -44,6 +46,17 @@ public submit(){
 	console.log(this.emp);
 }
 	)
+}
+
+public update (){
+  this.router.navigate([`/details/update`])
+  this.btn_stt= true;
+  this.service.update(this.id,this.emp).subscribe((add)=>{
+  console.log(add)
+}
+
+  )
+
 }
 
 

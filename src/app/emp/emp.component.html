@@ -34,8 +34,8 @@
            class="form-control"
            bsDatepicker>
   </div>
-	<button (click)="submit()">Submit</button>
-	<button (click)="add()">Add Records</button>
+	<button *ngIf= btn_stt (click)="submit()">Submit</button>
+	<button *ngIf=!btn_stt (click)="update()">Update</button>
 </div>
 </div>
 </div>

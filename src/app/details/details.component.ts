@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActorService } from '../actor.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -10,14 +11,15 @@ import { Router } from '@angular/router';
 export class DetailsComponent implements OnInit {
 public edit_id:string;
 public emps: Array<any>;
+public id: any;
 
-  constructor( private service: ActorService, private router: Router ) { 
+  constructor( private service: ActorService, private router: Router,  private activeRoute: ActivatedRoute ) { 
 this.emps = [];
 this.getemps()
 }
 
   ngOnInit() {
-
+this.id=this.activeRoute.snapshot.params.id;
   }
 getemps(){
 	this.service.get().subscribe((add)=>{
