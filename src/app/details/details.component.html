@@ -4,15 +4,16 @@
 	</div>
 <div class="col-md-10 data">
 <table class="table table-bordered">
-	<th>Product Name</th> <th>Select Product</th> <th>Total Products</th><th>Product Purchase</th> <th>Product Sale</th> <th>Date</th>
+	<th>Product Name</th> <th>Select Product</th> <th>Total Products</th><th>Product Purchase</th> <th>Product Sale</th> <th>Date & Time</th>
 	<tr *ngFor="let x of emps">
 		<td class="info">{{x.add.name}}</td>
 		<td class="warning">{{x.add.sel}}</td>
-		<td>{{x.add.total}}-</td>
+		<td>{{x.add.total}}</td>
 		<td class="success">{{x.add.pur}}</td>
 		<td class="danger">{{x.add.sale}}</td>
-		<td>{{x.add.date}}</td>
+		<td>{{todaydate | date:'d/M/y'}} <br> {{todaydate | date:'shortTime'}}</td>
 		<td><button (click)="edit(x)">Edit Details</button></td>
+		<td><button (click)="delete(x.id)">Remove Details</button></td>
 	</tr>
 </table>
 </div>

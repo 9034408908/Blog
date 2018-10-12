@@ -17,4 +17,7 @@ export class ActorService {
    update(id,empData){
 return this.http.put('https://employees-38b0a.firebaseio.com/employ/'+id+'.json',empData)
 }
+delete(id){
+return this.http.delete('https://employees-38b0a.firebaseio.com/employ/'+id+'.json')
+}
 }
