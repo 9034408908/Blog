@@ -1,0 +1,12 @@
+.select-box {
+	padding-top: 30px;
+	padding-left: 92%;
+}
+.caret {
+	margin-left: 97.5%;
+   cursor: pointer;
+   margin-top: -50px;
+}
+.select-button {
+padding-right: 21px;
+}

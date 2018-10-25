@@ -1,0 +1,13 @@
+<div class=select-box>
+	<button class="select-button" (click)="toggelSelectBox($event)">dsgfsdg</button>
+</div>
+
+<img src="assets/images/down-arrow.png" class="caret" alt="">
+
+<div *ngIf = "toggleSelect">
+<ul>
+	<li *ngFor = "let x of dataList" (click)="selectedValue(list)">
+		<span>{{x.value}}</span>
+	</li>
+</ul>
+	</div>

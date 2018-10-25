@@ -15,6 +15,7 @@ import { TranslateComponent } from './translate/translate.component';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { RwSelect2Component } from './rw-select2/rw-select2.component';
+import { DrpdwnComponent } from './drpdwn/drpdwn.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
@@ -60,7 +61,8 @@ export const appRoutes: Routes = [
     HeaderComponent,
     SidebarComponent,
     TranslateComponent,
-    RwSelect2Component
+    RwSelect2Component,
+    DrpdwnComponent
   ],
   imports: [
     BrowserModule,

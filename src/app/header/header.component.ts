@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+public count: any;
+  constructor() { 
+this.count= [
+{"value":"Ind"}
+];
+}
 
   ngOnInit() {
   }
-
+selectcount(event){
+	 console.log(event)
+}
 }
