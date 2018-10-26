@@ -1,0 +1,17 @@
+<div class=" product col-md-12">
+<div class="col-md-2">
+		<app-sidebar></app-sidebar>
+	</div>
+	<div class="col-md-10">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+	<div class="form-group">
+		<label>Email</label>
+		<input class="form-control" formControlName="email">
+	</div>
+	
+	<button type="submit" [disabled]="myForm.invalid">
+    Send
+  </button>
+</form>
+</div>
+</div>

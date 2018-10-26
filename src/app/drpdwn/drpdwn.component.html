@@ -1,13 +1,23 @@
-<div class=select-box>
-	<button class="select-button" (click)="toggelSelectBox($event)">dsgfsdg</button>
+<div class="rw-select-wrapper">
+  <div class="select-box">
+    <button class="select-button" [ngClass] = "{'shortEnabled' : shortNameEnable}" (click) = "toggleSelectBox($event)">
+      <div class="text-box">
+        <img [src]="selectedItem.url" alt="">
+        <span class="text" *ngIf = "!shortNameEnable">{{selectedItem.value}}</span>
+        <span class="text" *ngIf = "shortNameEnable">{{upperCase(selectedItem.short)}}</span>
+      </div>
+      <img src="assets/images/down-arrow.png" class="caret" alt="">
+    </button>
+    <!-- <div class="search-box"></div> -->
+    <div class="rw-select-list" *ngIf = "toggleSelect" [ngClass] = "{'shortEnabled' : shortNameEnable}">
+      <ul>
+        <li *ngFor = "let list of dataList" (click) ="selectedValue(list)">
+          <img [src]="list.url" alt="" style="margin-right:10px;">
+          <span *ngIf = "!shortNameEnable">{{list.value}}</span>
+          <span *ngIf = "shortNameEnable">{{upperCase(list.short)}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<img src="assets/images/down-arrow.png" class="caret" alt="">
-
-<div *ngIf = "toggleSelect">
-<ul>
-	<li *ngFor = "let x of dataList" (click)="selectedValue(list)">
-		<span>{{x.value}}</span>
-	</li>
-</ul>
-	</div>

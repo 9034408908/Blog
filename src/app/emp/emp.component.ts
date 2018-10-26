@@ -21,7 +21,7 @@ this.id=this.activeRoute.snapshot.params.id;
 }
 
   ngOnInit() {
-  this.btn_stt=false;
+ 
  this.service.get().subscribe((add)=>{
   var keys=Object.keys(add);
   this.emps=keys.map((id)=>{
@@ -50,7 +50,7 @@ public submit(){
 
 public update (){
   this.router.navigate([`/details/update`])
-  this.btn_stt= true;
+ 
   this.service.update(this.id,this.emp).subscribe((add)=>{
   console.log(add)
 }
